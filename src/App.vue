@@ -1,30 +1,35 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+<div class="blog-details-page-content">
+  <HeaderComponent/>
+  <div class="blog-main blog-main-details"></div>
+  <ArticleFilterBlockComponent/>
+  <FooterComponent/>
+</div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+img {
+  max-width: 100%;
 }
+
+a {
+  text-decoration: none;
+}
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
 </style>
+<script setup>
+import HeaderComponent from "@/components/HeaderComponent.vue";
+import ArticleFilterBlockComponent from "@/components/ArticleFilterBlockComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
+import '@/assets/fonts/stylesheet.css'
+</script>
