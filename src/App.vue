@@ -1,10 +1,5 @@
 <template>
-<div class="blog-details-page-content">
-  <HeaderComponent/>
-  <div class="blog-main blog-main-details"></div>
-  <ArticleFilterBlockComponent/>
-  <FooterComponent/>
-</div>
+  <ProjectPageComponent/>
 </template>
 
 <style lang="scss">
@@ -28,8 +23,7 @@ a {
 
 </style>
 <script setup>
-import HeaderComponent from "@/components/HeaderComponent.vue";
-import ArticleFilterBlockComponent from "@/components/ArticleFilterBlockComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
 import '@/assets/fonts/stylesheet.css'
+import ProjectPageComponent from "@/components/ProjectPageComponent.vue";
+// import StartPageComponent from "@/components/StartPageComponent.vue";
 </script>
