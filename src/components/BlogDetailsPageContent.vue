@@ -3,18 +3,16 @@ import MainBlogComponent from "@/components/UI/MainBlogComponent.vue";
 import HeaderComponent from "@/components/UI/HeaderComponent.vue";
 import FooterComponent from "@/components/UI/FooterComponent.vue";
 import ArticleFilterBlockComponent from "@/components/UI/ArticleFilterBlockComponent.vue";
+import {mapGetters} from "vuex";
 
 export default {
-  name: "BlogDetailsPageContent",
+  name: "BlogDetailsPageComponent",
   data() {
     return {
-      mainImg: {
-        imgUrl: require('@/assets/img/blog_details_main.png'),
-        isTitle: false,
-        title:'',
-        subtitle:'',
-      },
     }
+  },
+  computed: {
+    ...mapGetters(['getLargeMainImgs'])
   },
   components: {ArticleFilterBlockComponent, FooterComponent, HeaderComponent, MainBlogComponent}
 }
@@ -22,7 +20,7 @@ export default {
 
 <template>
   <HeaderComponent/>
-  <MainBlogComponent :mainImg="mainImg"/>
+  <MainBlogComponent :mainImg="getLargeMainImgs[1]"/>
   <ArticleFilterBlockComponent/>
   <FooterComponent/>
 </template>

@@ -1,5 +1,9 @@
 <template>
-  <ProjectPageComponent/>
+  <ProjectDetailsComponent/>
+<!--  <ProjectPageComponent/>-->
+<!--  <StartPageComponent/>-->
+<!--  <BlogPageComponent/>-->
+<!--  <BlogDetailsPageComponent/>-->
 </template>
 
 <style lang="scss">
@@ -24,6 +28,9 @@ a {
 </style>
 <script setup>
 import '@/assets/fonts/stylesheet.css'
-import ProjectPageComponent from "@/components/ProjectPageComponent.vue";
+import ProjectDetailsComponent from "@/components/ProjectDetailsComponent.vue";
+// import BlogDetailsPageComponent from "@/components/BlogDetailsPageComponent.vue";
+// import BlogPageComponent from "@/components/BlogPageComponent.vue";
+// import ProjectPageComponent from "@/components/ProjectPageComponent.vue";
 // import StartPageComponent from "@/components/StartPageComponent.vue";
 </script>

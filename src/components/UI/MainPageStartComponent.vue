@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "GetStartedComponent",
+  name: "MainPageStartComponent",
   props: ['mainPageStartedURL'],
   computed: {
   }

@@ -1,62 +1,27 @@
 <script>
+import {mapGetters} from "vuex";
+
 export default {
   name: "ArticlesAndNewsComponent",
-  props: ['articlesAndNewsData'],
+  props: ['articlesAndNewsOptions'],
   data() {
     return {
-      articlesAndNews: [
-        {
-          backgroundImg: require('@/assets/img/article_1.png'),
-          name: 'Kitchen Design',
-          title: 'Let’s Get Solution For Building Construction Work',
-          date: '26 December,2022'
-        },
-        {
-          backgroundImg: require('@/assets/img/article_2.png'),
-          name: 'Living Design',
-          title: 'Low Cost Latest Invented Interior Designing\n' +
-              'Ideas.',
-          date: '22 December,2022'
-        },
-        {
-          backgroundImg: require('@/assets/img/article_3.png'),
-          name: 'Interior Design',
-          title: 'Best For Any Office & Business Interior Solution',
-          date: '25 December,2022'
-        },
-        {
-          backgroundImg: require('@/assets/img/article_4.png'),
-          name: 'Kitchen Design',
-          title: 'Let’s Get Solution For Building Construction Work',
-          date: '26 December,2022'
-        },
-        {
-          backgroundImg: require('@/assets/img/article_5.png'),
-          name: 'Living Design',
-          title: 'Low Cost Latest Invented Interior Designing\n' +
-              'Ideas.',
-          date: '22 December,2022'
-        },
-        {
-          backgroundImg: require('@/assets/img/article_6.png'),
-          name: 'Interior Design',
-          title: 'Best For Any Office & Business Interior Solution',
-          date: '25 December,2022'
-        }
-      ],
     }
+  },
+  computed: {
+    ...mapGetters(['getArticlesAndNews']),
   }
 }
 </script>
 
 <template>
   <div class="articles-block center">
-    <h2 :style="{ textAlign: articlesAndNewsData.titleAlign }" class="articles-block__title">Articles & News</h2>
-    <p v-if="articlesAndNewsData.isSubtitle" class="articles-block__text">
+    <h2 :style="{ textAlign: articlesAndNewsOptions.titleAlign }" class="articles-block__title">Articles & News</h2>
+    <p v-if="articlesAndNewsOptions.isSubtitle" class="articles-block__text">
       It is a long established fact that a reader will be distracted by the of readable content<br> of a page when lookings at its layouts the points of using.
     </p>
     <div class="articles-block__articles">
-      <article v-for="(article, index) in this.articlesAndNews.splice(articlesAndNewsData.numberOfTitles)" :key="index" class="articles-block__article">
+      <article v-for="(article, index) in this.getArticlesAndNews.splice(articlesAndNewsOptions.numberOfTitles)" :key="index" class="articles-block__article">
         <div class="article__design">
           <div class="article__design_img" :style="{ backgroundImage: `url(${article.backgroundImg})` }">
             <p class="article__design_name">{{ article.name }}</p>
